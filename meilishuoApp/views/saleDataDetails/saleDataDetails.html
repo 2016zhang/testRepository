@@ -1,0 +1,20 @@
+<ion-view view-title="商品合集">
+    <ion-content class="productList">
+        <p class="detailImg card"><img ng-src="{{contentData.image.pic_url}}"></p>
+        <p class="saleDetailImg-desc">{{contentData.description}}</p>
+
+        <div class="row" ng-repeat="productRow in productRows">
+            <a class="col col-50"
+               ng-repeat="saleProduct in productRow"
+               ng-click="toDetail(saleProduct.goods_title)">
+                <div class="img-wrap">
+                    <img ng-src="{{saleProduct.show_pic}}">
+                </div>
+                <p class="saleDetailTitle">{{saleProduct.goods_title}}</p>
+                <p class="goods_info">
+                    <span class="price_info">{{saleProduct.goods_price | currency:"￥"}}</span>
+                </p>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>

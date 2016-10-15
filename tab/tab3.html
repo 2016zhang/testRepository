@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>全选轮播选项卡</title>
+<style>
+	*{ margin:0; padding:0;}
+    img{border: none;}
+    .item{margin: 30px;border: 1px solid #333; width: 300px; height: 50px; padding: 20px;}
+
+	.itemDiv{margin: 20px; float: left; overflow: hidden;text-align: center;}
+	.itemDiv button{ width:30px; height:30px; border:1px solid #999; margin:10px; font-size:15px; color:#000; background-color:#fff;}
+	.itemDiv img{ width:400px; height:260px;border:1px solid #999;}
+	.itemDiv .hide{ display:none;}
+	.itemDiv .change{ background-color:red;}
+
+    .box{height: 260px; width: 400px; border: 2px solid red; margin:20px; position: relative; overflow: hidden; float: left;}
+    .box .pic{position: absolute;top: 0;left: 0}
+    .box .pic img{float: left;}
+    .img{ float: none; display: block;}
+</style>
+<script src="js/tools.js"></script>
+<script>
+window.onload=function(){
+    //全选功能调用函数
+    chk_itmes('item1');
+    chk_itmes('item2');
+    chk_itmes('item3');
+
+    //轮播功能调用函数
+    slide("box1","left",15);
+    slide("box2","top",5);
+    slide("box3","right",25);
+    slide("box4","bottom");
+	
+	//选项卡功能调用函数
+	tab('itemA');
+	tab('itemB');
+	tab('itemC');
+    tab('itemD');
+};
+</script>
+</head>
+
+<body>
+    <div id="item1" class="item">
+        <label><input type="checkbox" name="wrap">全选</label>
+        <div>
+              <input type="checkbox" name="wrap">
+              <input type="checkbox" name="wrap">
+              <input type="checkbox" name="wrap">
+              <input type="checkbox" name="wrap">
+              <input type="checkbox" name="wrap">
+        </div>
+    </div>
+
+    <div id="item2" class="item">
+        <label><input type="checkbox" name="wrap">全选</label>
+        <div>
+              <input type="checkbox" name="wrap">
+              <input type="checkbox" name="wrap">
+              <input type="checkbox" name="wrap">
+              <input type="checkbox" name="wrap">
+              <input type="checkbox" name="wrap">
+        </div>
+    </div>
+
+    <div id="item3" class="item">
+        <label><input type="checkbox" name="wrap">全选</label>
+        <div>
+              <input type="checkbox" name="wrap">
+              <input type="checkbox" name="wrap">
+              <input type="checkbox" name="wrap">
+              <input type="checkbox" name="wrap">
+              <input type="checkbox" name="wrap">
+        </div>
+    </div>
+
+    <div id="box1" class="box">
+        <p class="pic">
+            <img src="images/01.jpg">
+            <img src="images/02.jpg">
+            <img src="images/03.jpg">
+            <img src="images/04.jpg">
+            <img src="images/05.jpg">
+        </p>
+    </div>
+    <div id="box2" class="box">
+        <p class="pic">
+            <img src="images/01.jpg">
+            <img src="images/02.jpg">
+            <img src="images/03.jpg">
+            <img src="images/04.jpg">
+            <img src="images/05.jpg">
+        </p>
+    </div>
+    <div id="box3" class="box">
+        <p class="pic">
+            <img src="images/01.jpg">
+            <img src="images/02.jpg">
+            <img src="images/03.jpg">
+            <img src="images/04.jpg">
+            <img src="images/05.jpg">
+        </p>
+    </div>
+    <div id="box4" class="box">
+        <p class="pic">
+            <img src="images/01.jpg">
+            <img src="images/02.jpg">
+            <img src="images/03.jpg">
+            <img src="images/04.jpg">
+            <img src="images/05.jpg">
+        </p>
+    </div>
+    
+    <div id="itemA" class="itemDiv">
+    	<div>
+        	<img src="images/01.jpg">
+            <img src="images/02.jpg" class="hide">
+            <img src="images/03.jpg" class="hide">
+        </div>
+        <button type="button" class="change">1</button>
+        <button type="button">2</button>
+        <button type="button">3</button>	
+    </div>
+
+    <div id="itemB" class="itemDiv">
+    	<div>
+        	<img src="images/01.jpg">
+            <img src="images/02.jpg" class="hide">
+            <img src="images/03.jpg" class="hide">
+        </div>
+        <button type="button" class="change">1</button>
+        <button type="button">2</button>
+        <button type="button">3</button>	
+    </div>
+
+    <div id="itemC" class="itemDiv">
+    	<div>
+        	<img src="images/01.jpg">
+            <img src="images/02.jpg" class="hide">
+            <img src="images/03.jpg" class="hide">
+        </div>
+        <button type="button" class="change">1</button>
+        <button type="button">2</button>
+        <button type="button">3</button>	
+    </div>
+    <div id="itemD" class="itemDiv">
+        <div>
+            <img src="images/01.jpg">
+            <img src="images/02.jpg" class="hide">
+            <img src="images/03.jpg" class="hide">
+        </div>
+        <button type="button" class="change">1</button>
+        <button type="button">2</button>
+        <button type="button">3</button>    
+    </div>
+</body>
+</html>

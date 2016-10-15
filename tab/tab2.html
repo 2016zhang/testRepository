@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>轮播</title>
+	<style type="text/css">
+		*{padding: 0;margin: 0;}
+		img{border: none;}
+		.item{ float:left;}
+		.item .box{height: 260px; width: 400px; border: 2px solid red; margin: 20px; position: relative; overflow: hidden; }
+		.item .box .pic{position: absolute;top: 0;left: 0}
+		.item .box img{float: left;}
+		.item .box .img{ float: none; display: block;}
+		.item .button{text-align: center;}
+		.item button{ width:30px; height:30px; border:1px solid #999; margin:10px 0 0 10px; font-size:15px; color:#000; background-color:#fff;}
+		.item .change{ background-color:red;}
+	</style>
+	<script src="js/tab2.js"></script>
+	<script type="text/javascript">
+	window.onload=function(){
+		slide("itemA",'left',5);
+		slide("itemB",'top',25);
+	};
+</script>
+</head>
+<body>
+	<div id="itemA" class="item">
+		<div class="box">
+			<p class="pic">
+				<img src="images/01.jpg">
+				<img src="images/02.jpg">
+				<img src="images/03.jpg">
+				<img src="images/04.jpg">
+				<img src="images/05.jpg">
+			</p>
+		</div>
+		<div class="button">
+			<button type="button" class="change">1</button>
+		    <button type="button">2</button>
+		    <button type="button">3</button>
+		    <button type="button">4</button>
+		    <button type="button">5</button>
+    	</div>
+	</div>
+
+	<div id="itemB" class="item">
+		<div class="box">
+			<p class="pic">
+				<img src="images/01.jpg">
+				<img src="images/02.jpg">
+				<img src="images/03.jpg">
+				<img src="images/04.jpg">
+				<img src="images/05.jpg">
+			</p>
+		</div>
+		<div class="button">
+			<button type="button" class="change">1</button>
+		    <button type="button">2</button>
+		    <button type="button">3</button>
+		    <button type="button">4</button>
+		    <button type="button">5</button>
+    	</div>
+	</div>
+</body>
+</html>

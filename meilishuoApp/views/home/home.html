@@ -1,0 +1,73 @@
+<ion-view>
+    <ion-nav-title class="search_home">
+        <a href="javascript:;" class="home_btn"></a>
+        <a href="javascript:;" class="right-btn">
+            <img src="images/chart.png">
+        </a>
+        <div class="item-input-inset searchInput">
+            <div class="item-input-wrapper">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="search" placeholder="请输入搜索关键字">
+            </div>
+        </div>
+    </ion-nav-title>
+    <ion-content id="content_home">
+        <ion-slide-box auto-play="true" does-continue="true" slide-interval="3000" show-pager="true">
+            <ion-slide><div class="box"><img src="images/1sh_750x350.jpg"></div></ion-slide>
+            <ion-slide><div class="box"><img src="images/1sd_750x360.jpg"></div></ion-slide>
+            <ion-slide><div class="box"><img src="images/1ui_750x360.jpg"></div></ion-slide>
+            <ion-slide><div class="box"><img src="images/1vj_750x360.jpg"></div></ion-slide>
+            <ion-slide><div class="box"><img src="images/1iw_750x360.jpg"></div></ion-slide>
+        </ion-slide-box>
+        <ul class="row topImg">
+            <li class="col"><a href="javascript:;"><img src="images/li1_210x210.png"></a></li>
+            <li class="col"><a href="javascript:;"><img src="images/li2_210x210.png"></a></li>
+            <li class="col"><a href="javascript:;"><img src="images/li3_210x210.png"></a></li>
+            <li class="col"><a href="javascript:;"><img src="images/li4_210x210.png"></a></li>
+        </ul>
+        <div class="highQuality_wrap">
+            <div ng-repeat=" saleData in saleList">
+                <a href="javascript:;" class="img-box" ng-click="toSaleDataDetail(saleData.content.title)">
+                    <img ng-src="{{saleData.content.image.pic_url}}">
+                    <div class="title-box">
+                        <p class="f-title">{{saleData.content.title}}</p>
+                        <p class="s-title">{{saleData.goodsList.length}}款商品<i class="icon-trangle"></i></p>
+                    </div>
+                </a>
+                <div class="row good_list" ng-init="showSaleProductList = getShowSaleProducts(saleData)">
+                    <div ng-repeat="saleProduct in showSaleProductList"
+                         ng-click="toDetail(saleProduct.goods_title)">
+                        <a class="col goods_item">
+                            <div class="good_item"><img ng-src="{{saleProduct.show_pic}}"></div>
+                            <p class="item_title">{{saleProduct.goods_title}}</p>
+                            <p class="item_price">{{saleProduct.goods_price | currency:"￥"}}</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="more">查看更多<i class="arrow"></i></div>
+        </div>
+        <div class="home_nav">
+            <h2 class="title">精选</h2>
+        </div>
+        <div class="wall-wrap">
+            <div class="row" ng-repeat="productRow in productRows">
+                <a class="col col-50"
+                   ng-repeat="product in productRow"
+                   ng-click="toDetail(product.title)">
+                    <div class="img-wrap">
+                        <img ng-src="{{product.img}}">
+                    </div>
+                    <p class="title">{{product.title}}</p>
+                    <p class="goods_info">
+                        <span class="price_info">{{product.price | currency:"RMB ￥"}}</span>
+                        <i class="no_collect_icon"></i> {{product.cfav}}
+                    </p>
+                </a>
+            </div>
+
+            <!--无限滚动:如果所有的页面都加载完了(例如，共3页)，则不再出现此组件-->
+            <ion-infinite-scroll on-infinite="getProducts()" ng-if="total>page" immediate-check="false"></ion-infinite-scroll>
+        </div>
+    </ion-content>
+</ion-view>

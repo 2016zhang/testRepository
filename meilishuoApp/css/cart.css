@@ -1,0 +1,111 @@
+#cart{
+    background: #f4f4f4;
+}
+.but{
+    color: #c12e2a;
+}
+.but:hover{
+    color: #f66;
+}
+.cart_content{
+    position: relative;
+    z-index: 10;
+}
+.none_info .btn {
+    display: block;
+    width: 8rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.2rem 0;
+    margin-top: 1.4rem;
+    -webkit-border-radius: .3rem;
+    border-radius: .3rem;
+    background-color: #f66;
+    color: #fff;
+    text-align: center;
+}
+.none_info {
+    text-align: center;
+    padding-top: 5rem;
+}
+.none_info p{
+    line-height: 1.6rem;
+    color: #666;
+}
+.float_ctrl {
+    position: fixed;
+    bottom: -5rem;
+    left: 0;
+    width: 100%;
+    padding: .8rem .5rem;
+    background-color: #fff;
+    border-top: 1px solid rgba(51,51,51,0.2);
+}
+.goods_check_box {
+    float: left;
+    margin-top: .08rem;
+    line-height: .44rem;
+    font-size: .22rem;
+    color: #666;
+    margin-right: .5rem;
+}
+.goods_check_box .box_btn {
+    width: 4rem;
+    height: 3rem;
+    float: left;
+    margin-right: .05rem;
+}
+.goods_check_box .box_btn input {
+    margin-left: -10rem;
+}
+.goods_check_box .box_btn input:checked+label {
+    background-image: url('../images/ch2.png');
+}
+.goods_check_box .box_btn label {
+    float: left;
+    width: 4rem;
+    height: 3.5rem;
+    background: url('../images/cg1.png') center no-repeat;
+    background-size: 2.44rem;
+}
+.goods_check_box span {
+    display: inline-block;
+    line-height: 3.5rem;
+    height: 3.5rem;
+    font-size: 1.5rem;
+}
+.go_charge {
+    float: right;
+    background-color: #f66;
+    color: #fff;
+    -webkit-border-radius: .03rem;
+    border-radius: .03rem;
+    width: 8rem;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1.5rem;
+    border: 0;
+    text-align: center;
+}
+.order_msg {
+    margin-left: 1rem;
+    font-size: 1.3rem;
+}
+.order_msg .price {
+    margin-bottom: .1rem;
+    font-size: 1.4rem;
+}
+.order_msg .price span {
+    font-size: 1.4rem;
+    color: #ff7a9a;
+}
+.order_msg .msg {
+    color: #999;
+}
+.show_product .total{
+    text-align: right;
+    color: #000;
+}
+.show_product .item-complex .item-content{
+
+}

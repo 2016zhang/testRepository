@@ -1,0 +1,40 @@
+*{margin: 0;padding: 0;}
+ul{list-style: none;}
+body{font-size: 14px;font-family: "宋体";background-color: #ECF7FD;background-repeat: no-repeat;background-size:cover;}
+select,button{outline: none;}
+#loading{display: none;}
+.wrap{width: 878px;margin: 0 auto;text-align: center;}
+.wrap h1{font: bolder 32px/40px "Microsoft YaHei";height: 40px;padding: 15px 0;}
+#sel select{width: 100px;height: 30px;}
+#sel button{width: 80px;height: 30px;color:#fff;background-color: dodgerblue;border-radius: 10px;list-style-type:none;}
+li{float: left;padding: 10px;}
+.box::after,.life::after,.life li::after,.w::after{content: "200B";display: block;font-size: 0;height: 0;clear: both;}
+.box,.life,.life li{*zoom: 1;background: #ECF7FD;}
+#result h4{font: bolder 18px/40px "Microsoft YaHei";height: 40px;}
+#result h2{font: bolder 22px/40px "Microsoft YaHei";height: 40px;}
+#result p{line-height: 30px;height: 30px;}
+#result .temp{margin-left: 300px;padding-right: 6px; font: 60px/120px "Microsoft YaHei";height: 130px;float: left;border-right: 1px solid #ddd;}
+#result .pic{float: left;}
+#result .pic img{display: block;}
+#result p span{padding: 5px 20px;background: #B3EE3A;text-align: center;margin-left: 5px;}
+
+.box{margin-top: 20px;}
+.box li{padding-left: 12px;border-right: 1px dotted #ccc;}
+.box .one{border-left: 1px dotted #ccc;background-color: rgba(3,3,3,.1);}
+.box li:hover{background-color: rgba(3,3,3,.1);}
+.box li img:hover{transform: translate(0,5px);}
+.box li strong{color: red;}
+.box li p i{font-style: normal;font-weight: bolder;}
+.suggestion{width: 876px;margin: 20px auto 0;}
+.suggestion h2{text-align: left;color: steelblue;font: 700 16px/30px "Microsoft YaHei";}
+.life li{width: 270px;height: 120px;border: 1px solid #ccc;}
+.life li i{width: 48px;height:48px;background: url("../images/iconall.png") no-repeat;display: inline-block;float: left;vertical-align: middle;margin-top: 25px;}
+.life .text{float: left;width: 180px;padding: 5px;margin-left: 10px;}
+.life .text h3{color: red;}
+.life .drsg i{background-position: -153px -169px;}
+.life .flu i{background-position: -105px -400px}
+.life .trav i{background-position: -101px -352px;}
+.life .cw i{background-position: -53px -398px;}
+.life .sport i{background-position: 0 -400px;}
+.life .uv i{background-position: -107px -171px;}
+#result .life p{line-height: 25px;}

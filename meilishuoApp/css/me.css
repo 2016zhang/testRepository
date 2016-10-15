@@ -1,0 +1,162 @@
+a {
+    text-decoration: none;
+}
+.head-box {
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+}
+.head-box .user-avatar {
+    padding-top: 1.2rem;
+    padding-left: 2rem;
+    float: left;
+}
+.user-avatar img {
+    border-radius: 50%;
+    width: 3.9rem;
+    height: 3.9rem;
+}
+.head-box .user-name {
+    color: #333;
+    line-height: 3.5rem;
+    padding-top: .4rem;
+    font-size: 2rem;
+    margin-left: 8rem;
+}
+.address-link {
+    display: block;
+    margin-left: 8rem;
+    margin-right: 3rem;
+}
+.head-box .address-link p {
+    color: #333;
+    font-size: 1.3rem;
+}
+.content-box {
+    background-color: #f6f6f6;
+    width: 100%;
+    overflow: hidden;
+}
+.content-box .order-info {
+    width: 100%;
+    margin-top: .2rem;
+    background-color: #fff;
+}
+.order-info .order-header {
+    display: block;
+}
+.order-info .order-header .item-text {
+    border-bottom: 1px solid #e5e5e5;
+    height: 4rem;
+    background: url("http://s18.mogucdn.com/p1/160727/upload_ie4tamrqmu4dsmjqmezdambqgqyde_12x23.png") no-repeat 95vw 1.2rem;
+    background-size: .6rem;
+    overflow: hidden;
+}
+.order-info .order-header .item-text .order-icon {
+    width: 5rem;
+    height: 4rem;
+    float: left;
+}
+.order-info .order-header .item-text .order-icon img {
+    display: block;
+    width: 2.4rem;
+    margin: .8rem auto;
+    text-align: center;
+    border-radius: 50%;
+}
+.order-info .order-header .item-text .order-title {
+    line-height: 4rem;
+    font-size: 1.6rem;
+    color: #333;
+    float: left;
+    white-space: nowrap;
+}
+.order-info .order-tips {
+    height: 5.8rem;
+    overflow: hidden;
+}
+.order-info .order-tips .tips-text {
+    display: block;
+    width: 25%;
+    height: 6.4rem;
+    float: left;
+}
+.order-tips img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.order-info .order-tips .tips-text .tips-icon {
+    width: 1.6rem;
+    height: 1.6rem;
+    margin: 1rem auto 0;
+    position: relative;
+}
+.order-info .order-tips .tips-text .tips-name {
+    font-size: 1.4rem;
+    margin: .25rem 0;
+    text-align: center;
+    color: #333;
+}
+.content-box .collection-tips {
+    width: 100%;
+    margin-top: 1.3rem;
+    background-color: #fff;
+}
+.collection-tips .collection-header {
+    display: block;
+}
+.collection-tips .collection-header .item-text {
+    height: 4rem;
+    background: url("http://s18.mogucdn.com/p1/160727/upload_ie4tamrqmu4dsmjqmezdambqgqyde_12x23.png") no-repeat 95vw 1.2rem;
+    background-size: .6rem;
+    overflow: hidden;
+    border-bottom: 1px solid #e5e5e5;
+}
+.collection-tips .collection-header .item-text .item-icon {
+    width: 5rem;
+    height: 4rem;
+    float: left;
+}
+.collection-tips .collection-header .item-text .item-icon img {
+    display: block;
+    width: 2.4rem;
+    margin: .8rem auto;
+    text-align: center;
+    border-radius: 50%;
+}
+.collection-tips .collection-header .item-text .item-main {
+    height: 4rem;
+    line-height: 4rem;
+    font-size: 1.8rem;
+    color: #333;
+    float: left;
+    white-space: nowrap;
+}
+.collection-tips .collection-header .item-text .item-main .item-title {
+    height: 4rem;
+    width: 20rem;
+}
+.content-box .out-content {
+    width: 26rem;
+    height: auto;
+    margin: 2rem auto;
+}
+.out-content .logout {
+    display: block;
+    width: 26rem;
+    height: 3rem;
+    line-height: 3rem;
+    color: #fff;
+    background-color: #ff5777;
+    font-size: 1.6rem;
+    border-radius: 4px;
+    text-align: center;
+}
+.bar .title{
+    font-size: 2rem;
+    color: #ff679a;
+}
+.ion-android-cart{
+    color: #ff5777;
+}

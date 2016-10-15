@@ -1,0 +1,11 @@
+@charset "utf-8";
+/* CSS Document */
+*{ margin:0; padding:0;}
+ul,ol{ list-style:none;}
+a{ text-decoration:none;color:#666;}
+img,input{ border:none;}
+body{ font-family:arial,"Microsoft Yahei","宋体"; color:#666;font-size: 12px;}
+i,em,b{ font-style:normal;}
+.clear::after{ content:""; display:block; font-size:0; height:0; clear:both;}
+/*IE7/6*/
+.clear{ *zoom:1;}

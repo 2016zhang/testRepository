@@ -1,0 +1,133 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>改变大小</title>
+<style>
+*{margin:0;padding:0}
+.box{width:200px;height:200px; position:absolute;top:100px;left:300px;}
+
+/*四边*/
+.box .t{width:100%;height:10px; position:absolute;top:0;left:0; background:#666;z-index:1;cursor: row-resize;}
+.box .r{width:10px;height:100%; position:absolute;top:0;right:0px; background:#666;z-index:1;cursor: col-resize;}
+.box .b{width:100%;height:10px; position:absolute;bottom:0px;left:0; background:#666;z-index:1;cursor: row-resize;}
+.box .l{width:10px;height:100%; position:absolute;top:0;left:0; background:#666;z-index:1;cursor: col-resize;}
+
+/*四角*/
+.box .tl{width:20px;height:20px;position:absolute;top:-5px;left:-5px; background:#e59eef;z-index:2;cursor:nw-resize;}
+.box .tr{width:20px;height:20px;position:absolute;top:-5px;right:-5px; background:#e59eef;z-index:2;cursor:ne-resize;}
+.box .br{width:20px;height:20px;position:absolute;bottom:-5px;right:-5px; background:#e59eef;z-index:2;cursor:se-resize;}
+.box .bl{width:20px;height:20px;position:absolute;bottom:-5px;left:-5px; background:#e59eef;z-index:2;cursor:sw-resize;}
+
+/*图片*/
+img{ width:100%; height:100%;}
+</style>
+<script src="js/drag.js"></script>
+<script>
+window.onload=function(){
+	var oDiv=document.getElementsByTagName('div')[0];
+	var aSpan=oDiv.getElementsByTagName('span');
+	drag(oDiv);  //调用拖拽函数
+	for(var i=0;i<aSpan.length;i++){
+		dragFn(aSpan[i]);	
+	};
+	
+	function dragFn(obj){
+		obj.onmousedown=function(ev){
+			var oEv=ev||event;
+			oEv.cancelBubble=true;//阻止时间冒泡
+			//记录下原始的位置 高度 宽度
+			var oldWidth=oDiv.offsetWidth;  
+			var oldHeight=oDiv.offsetHeight;
+			var oldX=oEv.clientX;
+			var oldY=oEv.clientY;
+			var oldLeft=oDiv.offsetLeft;
+			var oldTop=oDiv.offsetTop;
+			
+			document.onmousemove=function(ev){
+				var oEv=ev||event;
+				//  top
+			  	if(obj.className=="t"){
+					oDiv.style.height=oldHeight-(oEv.clientY-oldY)+'px';
+					oDiv.style.width=oldWidth+'px';		
+					oDiv.style.left=oldLeft+'px';
+					oDiv.style.top=oldTop+(oEv.clientY-oldTop)+'px';
+			  	};
+			  	// right
+			  	if(obj.className=="r"){
+					oDiv.style.height=oldHeight+'px';
+					oDiv.style.width=oldWidth+(oEv.clientX-oldX)+'px';		
+					oDiv.style.left=oldLeft+'px';
+					oDiv.style.top=oldTop+'px';
+			  	};
+			  	//  bottom
+			  	if(obj.className=="b"){
+					oDiv.style.height=oldHeight+(oEv.clientY-oldY)+'px';
+					oDiv.style.width=oldWidth+'px';		
+					oDiv.style.left=oldLeft+'px';
+					oDiv.style.top=oldTop+'px';
+			  	};
+			  	//  left
+			  	if(obj.className=="l"){
+					oDiv.style.height=oldHeight+'px';
+					oDiv.style.width=oldWidth-(oEv.clientX-oldX)+'px';		
+					oDiv.style.left=oldLeft+(oEv.clientX-oldLeft)+'px';
+					oDiv.style.top=oldTop+'px';
+			  	};
+			  	
+				//四角-------------------------------------------------
+				if(obj.className=="tl"){
+					oDiv.style.height=oldHeight-(oEv.clientY-oldY)+'px';
+					oDiv.style.width=oldWidth-(oEv.clientX-oldX)+'px';		
+					oDiv.style.left=oldLeft+(oEv.clientX-oldLeft)+'px';
+					oDiv.style.top=oldTop+(oEv.clientY-oldTop)+'px';
+			  	};
+
+			  	if(obj.className=="tr"){
+					oDiv.style.height=oldHeight-(oEv.clientY-oldY)+'px';
+					oDiv.style.width=oldWidth+(oEv.clientX-oldX)+'px';		
+					oDiv.style.left=oldLeft+'px';
+					oDiv.style.top=oldTop+(oEv.clientY-oldTop)+'px';
+			  	};
+			  	if(obj.className=="br"){
+					oDiv.style.height=oldHeight+(oEv.clientY-oldY)+'px';
+					oDiv.style.width=oldWidth+(oEv.clientX-oldX)+'px';		
+					oDiv.style.left=oldLeft+'px';
+					oDiv.style.top=oldTop+'px';
+			  	};
+			  	if(obj.className=="bl"){
+					oDiv.style.height=oldHeight+(oEv.clientY-oldY)+'px';
+					oDiv.style.width=oldWidth-(oEv.clientX-oldX)+'px';		
+					oDiv.style.left=oldLeft+(oEv.clientX-oldLeft)+'px';
+					oDiv.style.top=oldTop+'px';
+			  	};
+				
+			};
+			
+			document.onmouseup=function(){
+				document.onmousemove=null;
+			};	
+			return false;
+		};
+	};
+		
+};
+</script>
+</head>
+
+<body>
+<div class="box">
+ <span class="t"></span>
+ <span class="r"></span>
+ <span class="b"></span>
+ <span class="l"></span>
+ 
+ <span class="tl"></span>
+ <span class="tr"></span>
+ <span class="br"></span>
+ <span class="bl"></span>
+
+ <img src="01.jpg">
+</div>
+</body>
+</html>

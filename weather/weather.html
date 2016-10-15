@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/ulit.js"></script>
+    <script src="js/tianqi.js"></script>
+    <script>
+        /*查询当天天气的基本情况，全球5万个城市（包含中国2567个市县地区）的7天天气预报、实况天气、每3小时天气、AQI空气质量、生活指数等数据
+        返回的天气类型见：http://bbs.apistore.baidu.com/forum.php?mod=viewthread&tid=39&extra=page%3D1
+        天气icon分享：http://bbs.apistore.baidu.com/forum.php?mod=viewthread&tid=685&extra=page%3D1
+         接口地址：http://apis.baidu.com/heweather/weather/free     ?city=beijing
+         apikey:306bce37a358e444addc2fdf74f4f8f2
+         国内cityid可以参考 http://www.heweather.com/documents/cn-city-list
+         紫外线background-position: -107px -171px;
+         感冒    background-position: -105px -400px;
+         旅游    background-position: -101px -352px;re
+         穿衣    background-position: -153px -169px;liang
+         洗车    background-position: -53px -398px;
+         运动    background-position: 0 -400px;
+        */
+
+        var pic={
+            "晴":"100.png",
+            "多云":"101.png",
+            "少云":"102.png",
+            "晴间多云":"103.png",
+            "阴":"104.png",
+            "有风":"200.png",
+            "平静":"201.png",
+            "微风":"202.png",
+            "和风":"203.png",
+            "清风":"204.png",
+            "强风/劲风":"205.png",
+            "疾风":"206.png",
+            "大风":"207.png",
+            "烈风":"208.png",
+            "风暴":"209.png",
+            "狂暴风":"210.png",
+            "飓风":"211.png",
+            "龙卷风":"212.png",
+            "热带风暴":"213.png",
+            "阵雨":"300.png",
+            "强阵雨":"301.png",
+            "雷阵雨":"302.png",
+            "强雷阵雨":"303.png",
+            "雷阵雨伴有冰雹":"304.png",
+            "小雨":"305.png",
+            "中雨":"306.png",
+            "大雨":"307.png",
+            "极端降雨":"308.png",
+            "毛毛雨/细雨":"309.png",
+            "暴雨":"310.png",
+            "大暴雨":"311.png",
+            "特大暴雨":"312.png",
+            "冻雨":"313.png",
+            "小雪":"400.png",
+            "中雪":"401.png",
+            "大雪":"402.png",
+            "暴雪":"403.png",
+            "雨夹雪":"404.png",
+            "雨雪天气":"405.png",
+            "阵雨夹雪":"406.png",
+            "阵雪":"407.png",
+            "薄雾":"500.png",
+            "雾":"501.png",
+            "霾":"502.png"
+        };
+        var wea = {
+            "晴":"sunshine.jpg",
+            "多云":"duoyun.jpg",
+            "少云":"duoyun.jpg",
+            "晴间多云":"duoyun.jpg",
+            "阴":"yin.gif",
+            "阵雨":"rain.gif",
+            "强阵雨":"rain.gif",
+            "雷阵雨":"rain.gif",
+            "强雷阵雨":"rain.gif",
+            "雷阵雨伴有冰雹":"rain.gif",
+            "小雨":"rain.gif",
+            "中雨":"rain.gif",
+            "大雨":"rain.gif",
+            "极端降雨":"rain.gif",
+            "毛毛雨/细雨":"rain.gif",
+            "暴雨":"rain.gif",
+            "大暴雨":"rain.gif",
+            "特大暴雨":"rain.gif",
+            "冻雨":"rain.gif",
+            "小雪":"xue.gif",
+            "中雪":"xue.gif",
+            "大雪":"xue.gif",
+            "暴雪":"xue.gif",
+            "雨夹雪":"xue.gif",
+            "雨雪天气":"xue.gif",
+            "阵雨夹雪":"xue.gif",
+            "阵雪":"xue.gif"
+        };
+
+    </script>
+
+</head>
+<body>
+<div class="wrap">
+    <h1>天气预报</h1>
+    <div id="sel">
+        <select id="province"></select>
+        <select id="shi"></select>
+        <select id="city"></select>
+        <button id="btn">点击查询</button>
+    </div>
+
+    <div id="loading"><img src="images/ajax-loader.gif"></div>
+    <div id="result"></div>
+</div>
+</body>
+</html>

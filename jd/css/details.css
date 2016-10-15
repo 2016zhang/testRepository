@@ -1,0 +1,242 @@
+.goods_nav,.goods_details{background-color: #f2f2f2;}
+.breadcrumb{height: 45px;line-height: 45px;padding: 0 0 4px 6px;overflow: hidden;}
+.breadcrumb strong{display: inline-block;font-size:18px;font-weight: bolder;line-height: 20px;font-family: "microsoft yahei";}
+.breadcrumb span{font-family: simsun;}
+.breadcrumb a:hover{color: #C81623;}
+
+
+.clearfix::after {content:"";display:block;visibility:hidden;height:0;clear:both;}
+.clearfix {zoom: 1;}
+.goods_details .inner{background-color: #fff;border-bottom: 1px solid #f2f2f2;margin-bottom: 10px;}
+.goods_details .item-grid{width: 100%;position: relative;z-index: 3;}
+#preview{float: left;display: inline;width: 378px;padding-bottom: 15px;position: relative;}
+#species1{width: 350px;height: 350px;margin: 14px 14px 14px 14px;position: relative;cursor:move;overflow: hidden;}
+
+#species1 div img{width: 350px;height: 350px;}
+#species1 div span {width:175px; height:175px; background:yellow; position:absolute; left:0px; top:0px; filter:alpha(opacity:30); opacity:0.3; border:1px solid #333; display:none;}
+#bigImg {width:400px; height:400px;overflow:hidden; position:absolute; top:0; left:380px; display:none;z-index: 10; border:1px solid #ccc; }
+#bigImg img{position:absolute;top: 0;left: 0;}
+
+
+
+
+#spec-list{position: relative;width: 310px;height: 54px;overflow: hidden;padding: 0 20px 0 34px;}
+#spec-list .spec-control,#s-share b,#store-sel .text b{background-image: url(../images/newicon.png);background-repeat:no-repeat;}
+#spec-list .spec-control{display: block;position: absolute;top:0;width: 14px;height: 54px;}
+#spec-forward{background-position: -56px -346px;left: 14px;}
+#spec-backward{background-position: -70px -346px;right: 0;}
+#spec-list .spec-items{position: absolute;top: 0;left: 36px;}
+#spec-list .spec-items .img_list{overflow: hidden;zoom: 1;}
+#spec-list .spec-items li{float: left;width: 62px;text-align: center;font-size: 0;position: relative;}
+#spec-list .spec-items .img_list li img{width: 50px;height: 50px;border: 2px solid transparent;}
+#spec-list .spec-items .img_list .borderC img{border: 2px solid #e4393c;}
+
+#product-info img{border: 0;vertical-align: middle;}
+#s-share{zoom: 1;padding: 24px 40px 0 34px;overflow: hidden;}
+#s-share .pro-num{float: left;}
+#s-share .atte{padding-left: 18px;}
+#s-share .share{padding: 0 10px 0 17px;}
+#s-share .atte,#s-share .share{position: relative;float: right;display: block;}
+#s-share b,#store-sel .text b{font-style: normal;}
+#s-share em{font-style: normal;}
+#s-share .atte b,#s-share .share b{position: absolute;display: inline-block;top: 2px;left: 0;height: 12px;overflow: hidden;}
+#s-share .atte b{background-position: -177px -296px;width: 14px;height: 14px;top: 3px;}
+#s-share .share b{background-position: -162px -296px;width: 12px;}
+.item-inner{padding-right: 244px;width: 588px;float: left;}
+#itemInfo{width: 100%;position: relative;}
+#name{padding: 15px 75px 10px 0;}
+#name h1{overflow: hidden;font:700 16px/1.5em arial,"microsoft yahei";}
+#summary{width: 100%;position: relative;z-index: 3;}
+.sum-info{position: absolute;top: 10px;right: 5px;z-index: 6;}
+#comment-count{border-left: 1px solid #e6e6e6;text-align: center;padding: 0 10px;line-height: 15px;}
+.sum-info p{color: #999;}
+.sum-info .count{font-size: 14px;color: #005ea7;font-family: verdana;}
+#sum-price{padding:10px 81px 0 72px; height: 30px;line-height: 30px;background: #f7f7f7;}
+#sum-price .dt,#prom .dt,#sum-support .dt,#sum-stock .dt,#sum-service .dt,#choose .dt{float: left;width: 72px;margin-left: -72px;display: inline;text-align: right;font-family: simsun;}
+#sum-price .dd{width: 432px;}
+#sum-pric .p-price{display: inline-block;vertical-align: middle;color: #e4393c;font-size: 20px;}
+#sum-top{position: relative;padding: 0 0 10px;margin-bottom: 10px;background: #f7f7f7;}
+#prom{position: relative;width: 516px;padding: 4px 0 0 72px;background: #f7f7f7;}
+#prom .dt{line-height: 30px;}
+#prom .prom-item{width: 425px;line-height: 30px;}
+.e-red_bg{color: #fff;background: #e4393c;line-height: 12px;margin-right: 5px;display: inline-block;font-style: normal;}
+.e-red{color: #e4393c;font-style: normal;}
+#prom .s-arrow{font-family: simsun;font-size: 8px;font-style: normal;text-decoration: none;}
+#sum-support{padding-left: 72px;padding-right: 20px;}
+#sum-support .dt{line-height: 18px}
+#sum-support .dd{line-height: 18px;width: 493px;}
+#sum-support a .giftbuy{background:url(../images/5icon.png) no-repeat 0 -213px; font-style: normal; width: 20px;height: 20px;margin-right: 10px;display: inline-block;vertical-align: middle;}
+#sum-support .dd a span{color: #e4393c;}
+#sum-stock,#sum-service{padding: 6px 20px 6px 72px;}
+#sum-stock .dt{margin-top: 4px;}
+#store-sel{position: relative;float: left;z-index: 3;height: 26px;margin-right: 6px;}
+#store-sel .text{position: relative;top: 0;height: 23px;line-height: 23px;background: #fff;overflow: hidden;border: 1px solid #CECBCE;padding: 0 20px 0 4px;}
+#store-sel .text b{display: block;overflow: hidden;position: absolute;top: 0;right: 0;width: 17px;height: 24px;background-position: -264px -188px;}
+#store-sel .content {
+	display: none;
+	position: absolute;
+	top: 25px;
+	left: -45px;
+	border: 1px solid #CECBCE;
+	width: 390px;
+	padding: 0 15px;
+	background: #fff;
+	-moz-box-shadow: 0 0 5px #ddd;
+	-webkit-box-shadow: 0 0 5px #ddd;
+	box-shadow: 0 0 5px #ddd;
+}
+#store-porm{float: left;margin-top: 4px;}
+#store-porm strong{font-size: 14px;font-weight: bolder;}
+#choose{width: 100%;padding-top: 10px;border-top: 1px dotted #ddd;margin-top: 5px;margin-bottom: 20px;}
+#choose a{display: block;}
+#choose-color,#choose-baitiao,#choose-service,#sum-tips{width: 516px;padding: 5px 0 5px 72px;float: left;}
+#choose-color .dt{margin-top: 10px;}
+#choose .dd{overflow: hidden;}
+#choose .item{float: left;margin: 2px 8px 2px 0;}
+
+#choose .selected{position: relative;zoom: 1;}
+#choose .selected b{position: absolute;bottom: 0;right: 0;height: 12px; width: 12px;overflow: hidden;background: url(../images/newicon.png) no-repeat -202px -224px;} 
+
+
+#choose .item a{font-size: 0;padding: 1px;float: left;display: block;border: 1px solid #ccc;background: #fff;}
+#choose .selecting a{border: 2px solid #e4393c;padding: 0;} 
+
+#choose-color .item a img{margin: 1px 3px 1px 1px;display: inline-block;vertical-align: middle;}
+#choose-color .item a i{display: inline-block;font-size: 12px;vertical-align: middle;}
+#choose-color i {font-style: normal;margin-right: 3px;}
+#choose-baitiao .dt{margin-top: 8px;}
+#choose-baitiao .dd,#choose-service .dd{overflow: visible;}
+#choose-baitiao .item{position: relative;margin-right: 4px;}
+#choose-baitiao .item a{text-align: center;float: left;border: 1px solid #ccc;background: #fff;padding: 5px;}
+#choose-baitiao .selecting a{border: 2px solid #e4393c;padding: 4px;}
+.baitiao-list strong{display: block;font-weight: normal;font-size: 12px;}
+.bt-tips{float: left;height: 32px;}
+.bt-tips .tips{display: block;position: relative;top: 6px;width: 18px;height: 18px;background: url(../images/newicon.png) no-repeat -132px -292px;}
+#choose-service{font-family: simsun;line-height: 16px;}
+#choose-service .dt{margin-top: 7px;}
+#choose-service .dd .server-type{position: relative;} 
+#choose-service .dd .server-type .item-cat{float: left;position: relative;margin-right: 4px;}
+#choose-service .item-cat .s-item{font-size: 0;border: 1px solid #DDD;line-height: 20px;padding: 5px;cursor: pointer;}
+#choose-service .selecting .s-item{border: 2px solid #e4393c;padding: 4px;}
+
+#choose-service .dd .server-type .item-cat .s-item .icon{width: 16px;height: 16px;margin-right: 4px;}
+#choose-service .dd .server-type .item-cat .s-item .name{font-size: 12px;margin-right: 4px;vertical-align: middle;max-width: 60px;height: 20px;overflow: hidden;display: inline-block;word-break:break-all;}
+#choose-service .dd .server-type .item-cat .s-item .price{margin-right: 5px;vertical-align: middle;font-size: 12px;}
+#choose-service .dd .server-type .item-cat .s-item .arrow-icon{width: 15px;height: 10px;vertical-align: middle;display: inline-block;background: url(../images/newicon.png) no-repeat -264px -195px;}
+#choose-btns{width: 578px;padding: 10px 0 8px 10px;border-bottom: none;}
+#choose-btns .choose-count{float:left;width: 49px;height: 34px;overflow: hidden;border: 1px solid #ccc;position: relative;margin: 8px 10px 0 0;}
+.choose-count a{border: 1px solid #ccc;position: absolute;right: -1px;display: block;color: #666;width: 15px;background: #f1f1f1;text-align: center;height: 17px;line-height: 17px;overflow: hidden;}
+.choose-count .btn-reduce{bottom: -1px;color: #ccc;}
+.choose-count .btn-reduce:hover{cursor: not-allowed;}
+.choose-count .btn-add{top: -1px;}
+.choose-count input{position: absolute;top: 1px;left: 0;display: block;border: none;width: 31px;line-height: 32px;height: 32px;text-align: center;border: 0;}
+#choose-btns .btn{float: left;height: 38px;margin-top: 8px;margin-bottom: 5px;}
+#choose-btns .btn a{position: relative;font: 400 18px/38px "microsoft yahei";text-align: center;color: #e4393c;float: left;margin-right: 6px;overflow: hidden;}
+#choose-btns .btn .btn-append{width: 137px;height: 38px;}
+#choose-btns .btn a b{display: block;width: 100%;height: 100%;position: absolute;top: 0;left: 0;cursor: pointer;}
+#choose-btns .btn b{background-image: url(../images/p-btns.png);background-repeat:no-repeat;}
+#sum-tips .tips-list {list-style: decimal inside;}
+#sum-tips .dt{line-height: 22px;}
+#sum-tips .tips-list li{float: left;line-height: 22px;margin-right: 15px;font-family: simsun;}
+.item-ext{width: 244px;float: left;margin-left: -244px;overflow: hidden;background: #fff;}
+.extInfo {width: 200px;margin-top: 20px;padding: 0 22px;}
+.extInfo .sell-info{position: relative;padding: 15px 9px;overflow: hidden;line-height: 20px;font-size: 0;}
+.extInfo .sell-info .name{font-size: 12px;display: inline-block;width: 126px;height: 20px;color: #005aa0;overflow: hidden;vertical-align: middle;text-overflow: ellipsis;}
+.extInfo .sell-info em{display: inline-block;font-size: 12px;font-family: simsun;color: #fff;width: 54px;height: 18px;line-height: 18px;text-align: center;vertical-align: middle; border-radius: 3px;background: #e4393c;}
+.cus-service{margin-bottom: 10px;line-height: 24px;}
+.btn-gray{width: 90px;height: 28px;line-height: 30px;padding: 0;color: #666;margin: 2px;background: #f9f9f9;border: 1px solid #cdcdcd;display: inline-block;text-align: center;}
+.cus-service .b1 i{background: url(../images/sprite-gys-im.gif) 0 0 no-repeat;display: inline-block;vertical-align: -4px;height: 18px;width: 17px;margin-right: 5px;}
+.cus-service i {display: inline-block;width: 17px;height: 18px;margin-right: 5px;vertical-align: -4px;background: url(../images/popScore.png) no-repeat;}
+.cus-service .b2 i{background-position: -130px 0;}
+.cus-service .enter i{background-position: -104px 0;}
+.cus-service .focus i{background-position: -78px 0;}
+.jd-ser{width: 210px;margin-right: -23px;zoom: 1;overflow: hidden;padding: 0 0 10px 9px;}
+.jd-ser dt{clear: both;padding-bottom: 10px;}
+.jd-ser dd{width: 95px;height: 16px;float: left;padding: 0 10px 10px 0;display: block;}
+.jd-ico{display: inline-block;height: 16px;line-height: 16px;padding-left: 16px;overflow: hidden;padding-right: 2px;color: #6a77b6;}
+.jd-ico img {width: 16px;height: 16px;margin-right: 4px;margin-left: -16px;float: left;display: inline;}
+#fitting{overflow: visible;padding-top: 2px;background: url(../images/tab.png) 0 -41px repeat-x;}
+#fitting .nav-wrap{height: 30px;position: relative;background-position: 0 -287px;overflow: visible;line-height: 30px;background: 0 0;border-left: 1px solid #ddd;border-right: 1px solid #ddd;}
+#fitting .nav-wrap .tab{margin-left: -1px;overflow: visible;float: left;}
+.tab li a{float: left;}
+.tab .tab-item{float: left;text-align: center;}
+.tab .tab-item a{font: 700 15px/30px 'microsoft yahei';height: 30px;padding: 0 13px;}
+.tab .tab-item a:hover{color: #e4393c;}
+.tab .curr a{ height: 34px;line-height: 34px;padding: 0 12px;border-left: 1px solid #ddd;border-right: 1px solid #ddd;color: #e4393c;}
+.tab .curr {height: 34px;border-top: 2px solid #e4393c;margin-top: -6px;color: #e4393c;background-color: #fff;}
+.pic-list{padding: 10px 0;border: 1px solid #ddd;border-top: none;overflow: visible;display: none;}
+.pic-list li{float: left;width: 130px;margin: 10px 35px;text-align: center;}
+.pic-list li .p-img{padding: 5px 0;overflow: hidden;}
+.pic-list li .p-name{height: 3em;word-break:break-all;word-wrap: break-word;overflow: hidden;line-height: 18px;}
+.pic-list li .p-price{overflow: hidden;}
+.pic-list li .p-price strong{color: #E4393C;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

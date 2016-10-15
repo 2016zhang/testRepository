@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>日历</title>
+	<style type="text/css">
+	*{margin: 0;padding: 0}
+	ul{list-style: none;}
+	a{text-decoration: none;}
+	body{color: #fff;font-weight:400;background: #3A383E;}
+	#calendar{padding:12px 22px;background-color:#2a2a29;width: 336px;margin: 50px auto;border:1px solid #5a5a5a;position: relative;border-radius: 12px;overflow: hidden;}
+	#calendar h2{font:42px/48px Microsoft YaHei UI;}
+    #calendar>p{font:16px/31px arial;margin-bottom:18px;color: #1E90FF;width: 165px;cursor: pointer;}
+    #calendar .control_time{position: relative;}
+    #calendar .control_time h4{font:20px/36px Microsoft YaHei UI;word-spacing: 1px;}
+	#title{text-align: center;margin-bottom: 10px;}
+	#calendar .control_time a{border-bottom: none;border-left: none;position:absolute;width: 15px;height: 15px;display:inline-block;border-top: 1px solid #fff;border-right: 1px solid #fff;}
+    #calendar .control_time .a1{transform:rotate(-135deg);left:5px;top:10px;}
+    #calendar .control_time .a2{transform:rotate(45deg);right:5px;top:10px;}                  
+	#calendar .week{border-bottom: 1px solid #000;margin-bottom: 10px;}
+	#calendar ul{font-size: 22px;line-height: 36px;text-align: center;clear: both;overflow:hidden;}
+    #calendar ul li{width: 42px;height: 36px;border: 2px solid transparent;float: left;margin:0 1px;}
+	#calendar .dataUl li{margin:0 1px 2px;font-size: 20px;}
+	#calendar .dataUl li:hover{border: 2px solid #555;cursor: pointer;}
+	#calendar .dataUl li.click{border: 2px solid #1E90FF;}
+	#calendar .dataUl li.ccc{color: #666;font-weight: 600;}
+	#calendar .dataUl li.sun{background: #1E90FF;color: #fff;}
+	#calendar .dataUl li.red{color: #8E8E38;}
+	</style>
+	<script type="text/javascript">
+	window.onload=function(){
+		var calendar=document.getElementById('calendar');
+		var sms=document.getElementById('sms');
+		var pTime=document.getElementById('pTime');
+		var date_list=document.getElementById('date_list');
+		var title=document.getElementById('title');
+		var pre=document.getElementById('pre');
+		var next=document.getElementById('next');
+
+		var allDay=0; //所有的天数
+		var firDay_week=0;//本月的第一天是周几
+		var today=0;//今天
+		var k=0; //当天
+		calendar_run(new Date());
+
+		function calendar_run(oDate){
+			today=oDate.getDate(); //今天
+			//算出本月第一天是星期几
+
+			
+			//----------有bug----------------------------------------------------
+			//oDate.setMonth(oDate.getMonth()+k);
+			//oDate.setDate(1); //把日期设置到第一天
+			//问题描述：若系统当前时间为2016.8.31，当调用oDate.setMonth(oDate.getMonth()+1)后，此时的时间为2016.9.31实为2016.10.1，再调用oDate.setDate(1)后，时间变为2016.10.1.（而理论上的结果应该是2016.9.1）
+			//解决方法：1----------------------------------
+			//oDate.setDate(1); //把日期设置到第一天
+			//oDate.setMonth(oDate.getMonth()+k);
+
+			//解决方法：2----------------------------------
+			oDate.setMonth(oDate.getMonth()+k,1);
+			
+
+			firDay_week=oDate.getDay(); //获得星期
+			//算出本月有多少天
+			oDate.setMonth(oDate.getMonth()+1,0);
+			allDay=oDate.getDate();
+
+			date_list.innerHTML='';
+			if (firDay_week==0) {firDay_week=7;}
+			for (var i = 1; i < firDay_week; i++) {
+				var li=document.createElement('li');
+				date_list.appendChild(li);
+			}
+
+			for (var i = 0; i < allDay; i++) {
+				var li=document.createElement('li');
+				li.innerHTML=i+1;
+				date_list.appendChild(li);                                          
+			}
+
+			//判断颜色
+			var aLi=date_list.children;
+			for (var i = 0; i < aLi.length; i++) {
+				if(aLi[i].innerHTML<today){
+					aLi[i].className='ccc';
+				}else if(aLi[i].innerHTML==today){
+					aLi[i].className='sun';
+				}else if(i%7==5 || i%7==6){
+					aLi[i].className='red';
+				}
+			}
+
+			if (k!=0) {
+				for (var i = 0; i < aLi.length; i++) {
+					aLi[i].className='';
+					if(i%7==5 || i%7==6){
+						aLi[i].className='red';
+					}
+				}
+			}
+			if(k<0){
+				for (var i = 0; i < aLi.length; i++) {
+					aLi[i].className='ccc';
+				}
+			}
+
+			title.innerHTML=oDate.getFullYear()+'年'+(oDate.getMonth()+1)+'月';
+			var clicked=null;
+			var beforeClickCls = null;
+			for (var i = 0; i < aLi.length; i++) {
+				aLi[i].onclick=function(){
+					if (this.className=='click') {
+						this.className=beforeClickCls;
+					}else{
+						if(clicked!=null){
+							clicked.className = beforeClickCls;
+						}
+						beforeClickCls = this.className;
+						this.className='click';
+						clicked = this;
+						if (this.innerHTML==today) {
+							this.className='sun';
+						}
+					}
+				}
+			}
+		}
+		
+		next.onclick=function(){
+			k++;
+			calendar_run(new Date());			
+		}
+		pre.onclick=function(){
+			k--;
+			calendar_run(new Date());			
+		}
+
+		//显示当前时分秒
+		runTime();
+		function runTime(){
+			var date=new Date();
+			var m=date.getMinutes();
+			var s=date.getSeconds();
+			m=checkTime(m);
+			s=checkTime(s);
+			sms.innerHTML=date.getHours()+':'+m+':'+s;
+
+			function checkTime(t){
+				if (t<10) {t='0'+t;}
+				return t;
+			}
+		}
+		setInterval(runTime,1000);
+		
+		//显示年月日星期
+		var week=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+		var ndate=new Date();
+		var d=ndate.getDay();
+		pTime.innerHTML=ndate.getFullYear()+'年'+(ndate.getMonth()+1)+'月'+ndate.getDate()+'日,'+week[d];
+		pTime.onclick=function(){
+			k=0;
+			calendar_run(new Date());
+		}	
+		
+		
+
+	}
+	</script>
+</head>
+<body>
+	<div id="calendar">
+		<h2 id="sms"></h2>
+        <p id="pTime"></p>
+        <div class="control_time">
+			<h4 id="title"></h4>
+			<a href="javascript:;" id="pre" class="a1"></a>
+			<a href="javascript:;" id="next" class="a2"></a>
+		</div>
+		<ul class="week">
+			<li>一</li>
+			<li>二</li>
+			<li>三</li>
+			<li>四</li>
+			<li>五</li>
+			<li>六</li>
+			<li>日</li>
+		</ul>
+		<ul id="date_list" class="dataUl"></ul>
+	</div>
+</body>
+</html>

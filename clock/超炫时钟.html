@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>超酷数码钟</title>
+<style>
+* { padding: 0; margin: 0; }
+li { list-style: none; }
+body { background:#003; }
+img { border: none; }
+.date { width: 560px; height: 520px; margin: 50px auto 0; position: relative; }
+.date h2 { text-align: center; padding: 80px 0 30px; }
+.year { text-align: center; padding-top: 30px; }
+.time { text-align: center; padding: 30px 0;font-size: 0;}
+.url { text-align: center; position: absolute; bottom: 40px; left: 160px; }
+.date img { position: relative; }
+.pos2 { margin-left: 10px; }
+.num { width: 25px; }
+.num1 { height: 120px;}
+.num3{height: 60px;padding-left: 10px;}
+.num4{height: 60px;padding-left: 0;}
+.num2 { width: 38px;}
+
+</style>
+<script>
+var week=["seven","one","two","three","four","five","six"];
+function fix(n){
+	return n<10? '0'+n : n;
+};
+window.onload=function(){
+	var clock=document.getElementById('clock');
+	var aImg=clock.getElementsByTagName('img');
+	
+	function goTime(){
+		var oDate=new Date();//日期对象
+		var year=oDate.getFullYear()+""; //年
+		var month=fix((oDate.getMonth()+1))+"";//月
+		var date=fix(oDate.getDate())+"";//日
+		var hour=fix(oDate.getHours())+"";//时
+		var minut=fix(oDate.getMinutes())+"";//分
+		var sec=fix(oDate.getSeconds())+"";//秒
+		var day_week=oDate.getDay();
+
+		//时分秒
+		aImg[0].src="images/"+hour[0]+".jpg";
+		aImg[1].src="images/"+hour[1]+".jpg";
+		aImg[3].src="images/"+minut[0]+".jpg";
+		aImg[4].src="images/"+minut[1]+".jpg";
+		aImg[5].src="images/"+sec[0]+".jpg";
+		aImg[6].src="images/"+sec[1]+".jpg";
+		
+		//年月日
+		aImg[7].src="images/"+year[0]+".png";
+		aImg[8].src="images/"+year[1]+".png";
+		aImg[9].src="images/"+year[2]+".png";
+		aImg[10].src="images/"+year[3]+".png";
+		aImg[12].src="images/"+month[0]+".png";
+		aImg[13].src="images/"+month[1]+".png";
+		aImg[15].src="images/"+date[0]+".png";
+		aImg[16].src="images/"+date[1]+".png";
+
+		//星期
+		aImg[19].src="images/"+week[day_week]+".png";
+	}
+
+	//页面加载调用
+	goTime();
+	setInterval(goTime,1000);
+	
+};
+
+</script>
+</head>
+
+<body>
+
+<div class="date">
+    <h2><img src="images/title.png" /></h2>
+    <div id="clock">
+    	<div class="time">
+            <img class="num1" src="images/0.jpg" alt="0" />
+            <img class="num1" src="images/0.jpg" alt="0" />
+            <img class="num1" src="images/dian.jpg" alt="dian" />
+            <img class="num1" src="images/0.jpg" alt="0" />
+            <img class="num1" src="images/0.jpg" alt="0" />
+            <img class="num3" src="images/0.jpg" alt="0" />
+            <img class="num4" src="images/0.jpg" alt="0" />
+        </div>
+        <div class="year">
+            <img class="num" src="images/0.png" alt="0" />
+            <img class="num" src="images/0.png" alt="0" />
+            <img class="num" src="images/0.png" alt="0" />
+            <img class="num" src="images/0.png" alt="0" />
+            <img src="images/year.png" alt="year" />
+            <img class="num" src="images/0.png" alt="0" />
+            <img class="num" src="images/0.png" alt="0" />
+            <img src="images/month.png" alt="month" />
+            <img class="num" src="images/0.png" alt="0" />
+            <img class="num" src="images/0.png" alt="0" />
+            <img src="images/seven.png" alt="seven" />
+            <img class="pos2" src="images/week.png" alt="week" />
+            <img class="num2" src="images/one.png" alt="one" /> 
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

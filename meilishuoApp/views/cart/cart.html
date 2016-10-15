@@ -1,0 +1,55 @@
+<ion-view view-title="购物车" id="cart">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon" ui-sref="tabs.home">首页</button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button button-icon ion-minus-circled but"
+                ng-click="data.showDelete=!data.showDelete;data.showReorder=false">
+        </button>
+    </ion-nav-buttons>
+    <ion-content class="cart_content">
+        <div class="cart">
+            <div ng-if="cart.length == 0">
+                <div class="none_info">
+                    <p>您的购物车还空着呢，</p>
+                    <p>美物这么多，快去看看吧～</p>
+                    <a href="#tabs/home" class="btn">去逛逛</a>
+                </div>
+            </div>
+            <div ng-if="cart.length != 0">
+                <ion-list show-delete="data.showDelete" class="show_product">
+                    <ion-item ng-repeat="item in cart" class="item-avatar-left item-remove-animate">
+                        <img ng-src="{{item.product.img}}">
+                        <p>{{item.product.title}}</p>
+                        <p>数量: {{item.number}}</p>
+                        <p>单价: {{item.product.price | currency:"￥"}}</p>
+                        <p class="total">小计: {{item.product.price*item.number | currency:"￥"}}</p>
+
+                        <!--删除按钮-->
+                        <ion-delete-button class="button button-icon ion-minus-circled"
+                                           ng-click="itemRemove(item)"></ion-delete-button>
+                        <!--可选按钮-->
+                        <ion-option-button class="button button-energized" ng-click="ding(item)">置顶</ion-option-button>
+                        <ion-option-button class="button button-assertive" ng-click="itemRemove(item)">删除</ion-option-button>
+                    </ion-item>
+                </ion-list>
+            </div>
+
+        </div>
+        <div class="float_ctrl" ng-if="cart.length != 0">
+                <div class="goods_check_box">
+                    <div class="box_btn">
+                        <input type="checkbox" value="on" id="select_all">
+                        <label for="select_all"></label>
+                    </div>
+                    <span>全选</span>
+                </div>
+                <div class="go_charge">去结算</div>
+                <div class="order_msg">
+                    <p class="price">合计：<span>{{totalMoney() | currency:"RMB ￥"}}</span></p>
+                    <p class="msg">不含运费、优惠扣减</p>
+                </div>
+            </div>
+
+    </ion-content>
+</ion-view>

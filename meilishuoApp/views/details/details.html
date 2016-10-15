@@ -1,0 +1,9 @@
+<ion-view view-title="商品详情" class="details">
+    <ion-content>
+        <p class="detailImg card"><img ng-src="{{product.img}}"></p>
+        <p class="detailImg-title">{{product.title}}</p>
+        <p class="detailImg-price">商品价格：<em>{{product.price | currency:"￥"}}</em></p>
+        <button class="button button-assertive" ui-sref="tabs.home" style="width: 45%;margin-left: .3rem">返回商品首页</button>
+        <button class="button button-assertive" ng-click="goCart(product)" style="width: 50%;">加入购物车</button>
+    </ion-content>
+</ion-view>
